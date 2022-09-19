@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="">
+        <input type="text" name="q" value="{{ bf_search }}">
+        <button type="submit">메세지 검색</button>
+    </form>
+    <hr>
+    <table class="table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>메세지</td>
+                <td>이미지</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in post_list %}
+                <tr>
+                    <td>
+                        {{ post.message}}
+                    </td>
+                    <td>
+                        {% if post.photo%}
+                            <img src="{{ post.photo.url}}" style="width:200px;" />
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

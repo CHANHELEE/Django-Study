@@ -21,9 +21,15 @@ urlpatterns = [
     path('admin/', admin.site.urls), # url reverse 사용 가능
     path('blog1/', include('blog1.urls')),
     path('instagram/',include('instagram.urls')),
+    path('accounts/',include('accounts.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+    import debug_toolbar
+    urlpatterns+=[
+        path('__debug__/',include(debug_toolbar.urls)),
+    ]
 # settings.MEDIA_URL
 # settings.MEDIA_ROOT
