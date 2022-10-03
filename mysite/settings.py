@@ -124,8 +124,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL = '/media/' # url 로 파일에 접근할 때
-MEDIA_ROOT = os.path.join(BASE_DIR,'media') #파일 저장시 필요 media 폴더에 저장
+MEDIA_URL = '/media/'   # url 로 파일에 접근할 때
+MEDIA_ROOT = os.path.join(BASE_DIR,'media') #파일 저장시 필요 media 폴더에 저장 /* 요놈 추가 */
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

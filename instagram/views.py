@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.http import HttpRequest
 from .models import  Post
 # Create your views here.
 
@@ -9,5 +11,10 @@ def post_list(request):
         qs = qs.filter(message__icontains=q)
     return render(request,'instagram/post_list.html',{'post_list':qs , 'bf_search' : q})
 
-def post_detail(request,pk):
-    pass
+def post_detail(request: HttpRequest , pk:int) -> HttpResponse:
+    response = HttpResponse()
+    response.write("hello world")
+    return  response
+
+def archives_year(request, year):
+    return HttpResponse(f"{year}년")
